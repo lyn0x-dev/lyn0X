@@ -337,7 +337,7 @@ LynoX/
 
 صُنع بكل 💚 بواسطة **Lynox X**
 
-[![WhatsApp Channel](https://img.shields.io/badge/تابع%20القناة-25d366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029Vb82Y93GehEEid2Xap23)
+[![WhatsApp Channel](https://img.shields.io/badge/تابع%20القناة-25d366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/@WND0)
 
 ⭐ لو المشروع عجبك، سيب نجمة على الريبو
 

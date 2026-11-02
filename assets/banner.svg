@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="1200" height="450">
+  <defs>
+    <radialGradient id="glowL" cx="0.15" cy="0.95" r="0.7">
+      <stop offset="0" stop-color="#0b6b4a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#03070a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="0.88" cy="0.1" r="0.6">
+      <stop offset="0" stop-color="#0e7490" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#03070a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gridFade" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMask"><rect width="1200" height="450" fill="url(#gridFade)"/></mask>
+    <pattern id="hex" width="56" height="97" patternUnits="userSpaceOnUse" patternTransform="scale(0.7)">
+      <path d="M28 0 L56 16 V48 L28 64 L0 48 V16 Z M28 64 V97 M0 48 L-28 64 M56 48 L84 64" fill="none" stroke="#25d366" stroke-opacity="0.13" stroke-width="1.2"/>
+    </pattern>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7dffb8"/>
+      <stop offset="0.5" stop-color="#25d366"/>
+      <stop offset="1" stop-color="#0ea5a0"/>
+    </linearGradient>
+    <linearGradient id="white" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cfe9dc"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="winBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b141a"/>
+      <stop offset="1" stop-color="#070d11"/>
+    </linearGradient>
+    <linearGradient id="winHead" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0f2f2a"/>
+      <stop offset="1" stop-color="#112530"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#25d366"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+    <clipPath id="round"><rect width="1200" height="450" rx="24"/></clipPath>
+    <clipPath id="titleClip"><rect x="70" y="140" width="460" height="110"/></clipPath>
+    <clipPath id="chatClip"><rect x="700" y="96" width="430" height="266"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <!-- ============ BACKGROUND ============ -->
+    <rect width="1200" height="450" fill="#03070a"/>
+    <rect width="1200" height="450" fill="url(#glowL)"/>
+    <rect width="1200" height="450" fill="url(#glowR)"/>
+    <rect width="1200" height="450" fill="url(#hex)" mask="url(#gridMask)"/>
+
+    <!-- scan line -->
+    <rect x="0" y="0" width="1200" height="2" fill="#25d366" opacity="0.12">
+      <animate attributeName="y" values="-4;450" dur="7s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- rising particles -->
+    <g fill="#4ade80">
+      <circle cx="120" cy="440" r="1.6"><animate attributeName="cy" values="450;10" dur="13s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0" dur="13s" repeatCount="indefinite"/></circle>
+      <circle cx="300" cy="440" r="1.2"><animate attributeName="cy" values="450;20" dur="11s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="11s" begin="2s" repeatCount="indefinite"/></circle>
+      <circle cx="520" cy="440" r="1.8"><animate attributeName="cy" values="450;30" dur="15s" begin="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0" dur="15s" begin="4s" repeatCount="indefinite"/></circle>
+      <circle cx="660" cy="440" r="1.3"><animate attributeName="cy" values="450;40" dur="12s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="12s" begin="1s" repeatCount="indefinite"/></circle>
+      <circle cx="1170" cy="440" r="1.5"><animate attributeName="cy" values="450;60" dur="14s" begin="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="14s" begin="3s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- soft rings behind title -->
+    <g transform="translate(300 192)" opacity="0.55">
+      <circle r="190" fill="none" stroke="#25d366" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="3 10">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="70s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="150" fill="none" stroke="#22d3ee" stroke-opacity="0.13" stroke-width="1" stroke-dasharray="14 12">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="55s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- ============ LEFT: BRAND ============ -->
+    <g font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif">
+
+      <!-- logo: hexagon + chat tail + X -->
+      <g transform="translate(74 62)">
+        <path d="M30 0 L56 15 V45 L30 60 L4 45 V15 Z" fill="#04120d" stroke="url(#green)" stroke-width="3.2" stroke-linejoin="round" filter="url(#soft)" opacity="0.8"/>
+        <path d="M30 0 L56 15 V45 L30 60 L4 45 V15 Z" fill="#04120d" stroke="url(#green)" stroke-width="3.2" stroke-linejoin="round"/>
+        <path d="M4 45 L-4 62 L16 54" fill="url(#green)" stroke="url(#green)" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M19 19 L41 41 M41 19 L19 41" stroke="url(#green)" stroke-width="5.5" stroke-linecap="round"/>
+        <circle cx="30" cy="30" r="3" fill="#04120d"/>
+      </g>
+      <text x="150" y="86" font-size="15" font-weight="700" fill="#4ade80" letter-spacing="5">WHATSAPP BOT ENGINE</text>
+      <text x="150" y="108" font-size="12" font-weight="600" fill="#5b7f70" letter-spacing="3">v8.0.9 · BAILEYS · NODE.JS</text>
+
+      <!-- title (drawn paths: identical on every device) -->
+      <g fill="none" stroke="#25d366" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" filter="url(#glow)">
+        <path d="M436 156 L506 228 M506 156 L436 228"/>
+      </g>
+      <g fill="none" stroke="url(#white)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M84 156 V228 H142"/>
+        <path d="M162 156 L195 196 L228 156 M195 196 V228"/>
+        <path d="M252 228 V156 L318 228 V156"/>
+        <rect x="346" y="156" width="64" height="72" rx="24"/>
+      </g>
+      <g fill="none" stroke="url(#green)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M436 156 L506 228 M506 156 L436 228"/>
+      </g>
+
+      <!-- shine -->
+      <g clip-path="url(#titleClip)">
+        <rect x="-200" y="130" width="110" height="130" fill="url(#sweep)" opacity="0.3" transform="skewX(-20)">
+          <animate attributeName="x" values="30;640;640" keyTimes="0;0.55;1" dur="6s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+
+      <!-- underline -->
+      <rect x="80" y="252" width="150" height="4" rx="2" fill="url(#green)"/>
+      <rect x="238" y="252" width="22" height="4" rx="2" fill="#25d366" fill-opacity="0.65"/>
+      <rect x="268" y="252" width="8" height="4" rx="2" fill="#25d366" fill-opacity="0.35"/>
+
+      <!-- tagline -->
+      <text x="80" y="296" font-size="25" font-weight="500" fill="#dff7ea">بوت واتساب عربي — أوامر وألعاب وذكاء اصطناعي</text>
+      <text x="80" y="326" font-size="16" fill="#7fa595" letter-spacing="0.6">143 plugins · 18 categories · sub-bots · Telegram control panel</text>
+
+      <!-- chips -->
+      <g font-size="13.5" font-weight="700">
+        <g transform="translate(80 352)">
+          <rect width="92" height="30" rx="15" fill="#25d366" fill-opacity="0.14" stroke="#25d366" stroke-opacity="0.7"/>
+          <circle cx="18" cy="15" r="4" fill="#25d366"/>
+          <text x="30" y="20" fill="#9bf3c2">Baileys</text>
+        </g>
+        <g transform="translate(184 352)">
+          <rect width="106" height="30" rx="15" fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.7"/>
+          <circle cx="18" cy="15" r="4" fill="#22d3ee"/>
+          <text x="30" y="20" fill="#a5f3fc">Sub-Bots</text>
+        </g>
+        <g transform="translate(302 352)">
+          <rect width="104" height="30" rx="15" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-opacity="0.7"/>
+          <circle cx="18" cy="15" r="4" fill="#38bdf8"/>
+          <text x="30" y="20" fill="#bae6fd">Telegram</text>
+        </g>
+        <g transform="translate(418 352)">
+          <rect width="86" height="30" rx="15" fill="#a3e635" fill-opacity="0.12" stroke="#a3e635" stroke-opacity="0.7"/>
+          <circle cx="18" cy="15" r="4" fill="#a3e635"/>
+          <text x="30" y="20" fill="#d9f99d">AI</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ============ RIGHT: CHAT WINDOW ============ -->
+    <g font-family="'Segoe UI','Inter',Arial,sans-serif">
+      <g transform="translate(0 0)" filter="url(#shadow)">
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -7;0 0" dur="7s" repeatCount="indefinite"/>
+        <rect x="700" y="46" width="430" height="326" rx="20" fill="url(#winBg)" stroke="#25d366" stroke-opacity="0.45"/>
+        <!-- header -->
+        <path d="M700 66 Q700 46 720 46 H1110 Q1130 46 1130 66 V96 H700 Z" fill="url(#winHead)"/>
+        <g transform="translate(720 56)">
+          <path d="M20 0 L37 10 V30 L20 40 L3 30 V10 Z" fill="#04120d" stroke="url(#green)" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M13 13 L27 27 M27 13 L13 27" stroke="url(#green)" stroke-width="3.6" stroke-linecap="round"/>
+        </g>
+        <text x="772" y="70" font-size="16" font-weight="700" fill="#e8f5ee">LynoX</text>
+        <circle cx="775" cy="83" r="4" fill="#25d366">
+          <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>
+        </circle>
+        <text x="785" y="87" font-size="12" fill="#7fe3a8">online</text>
+        <g fill="#7fa595" opacity="0.8">
+          <circle cx="1096" cy="66" r="2.2"/><circle cx="1096" cy="74" r="2.2"/><circle cx="1096" cy="82" r="2.2"/>
+        </g>
+
+        <!-- chat area -->
+        <g clip-path="url(#chatClip)">
+          <!-- bubble 1: user /menu -->
+          <g>
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.03;0.07;0.93;1" dur="14s" repeatCount="indefinite"/>
+            <rect x="1020" y="108" width="90" height="30" rx="12" fill="#005c4b"/>
+            <text x="1065" y="128" font-size="14" font-weight="600" fill="#e9fff6" text-anchor="middle" font-family="Consolas,'Courier New',monospace">/menu</text>
+          </g>
+          <!-- bubble 2: bot menu -->
+          <g>
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.14;0.18;0.93;1" dur="14s" repeatCount="indefinite"/>
+            <rect x="718" y="146" width="238" height="112" rx="12" fill="#1f2c34"/>
+            <g font-size="13" fill="#d6e8de">
+              <text x="732" y="168" fill="#8be9b3" font-weight="700">LynoX · Main menu</text>
+              <text x="732" y="188">1 ~ Downloads 📂</text>
+              <text x="732" y="206">2 ~ Groups 🐞</text>
+              <text x="732" y="224">9 ~ Games 🎮</text>
+              <text x="732" y="242">12 ~ AI 🤖</text>
+            </g>
+            <text x="944" y="252" font-size="10" fill="#6c8a7b" text-anchor="end">12:04 ✓✓</text>
+          </g>
+          <!-- bubble 3: user /play -->
+          <g>
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.44;0.93;1" dur="14s" repeatCount="indefinite"/>
+            <rect x="982" y="268" width="128" height="30" rx="12" fill="#005c4b"/>
+            <text x="1046" y="288" font-size="14" font-weight="600" fill="#e9fff6" text-anchor="middle" font-family="Consolas,'Courier New',monospace">/play lofi</text>
+          </g>
+          <!-- bubble 4: bot downloading -->
+          <g>
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.55;0.59;0.93;1" dur="14s" repeatCount="indefinite"/>
+            <rect x="718" y="306" width="226" height="48" rx="12" fill="#1f2c34"/>
+            <text x="732" y="326" font-size="12.5" fill="#d6e8de">🎵 جاري التحميل…</text>
+            <rect x="732" y="336" width="196" height="6" rx="3" fill="#0b141a"/>
+            <rect x="732" y="336" width="20" height="6" rx="3" fill="url(#bar)">
+              <animate attributeName="width" values="14;196;196" keyTimes="0;0.6;1" dur="3.4s" repeatCount="indefinite"/>
+            </rect>
+          </g>
+        </g>
+      </g>
+
+      <!-- typing dots chip -->
+      <g transform="translate(980 316)">
+        <animateTransform attributeName="transform" type="translate" values="980 316;980 309;980 316" dur="5s" repeatCount="indefinite"/>
+        <rect width="104" height="40" rx="20" fill="#0b141a" stroke="#25d366" stroke-opacity="0.5"/>
+        <circle cx="32" cy="20" r="4.5" fill="#25d366"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.2s" repeatCount="indefinite"/></circle>
+        <circle cx="52" cy="20" r="4.5" fill="#25d366"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></circle>
+        <circle cx="72" cy="20" r="4.5" fill="#25d366"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.2s" begin="0.4s" repeatCount="indefinite"/></circle>
+      </g>
+
+      <!-- floating feature orbs -->
+      <g text-anchor="middle" font-size="20">
+        <g transform="translate(690 146)">
+          <animateTransform attributeName="transform" type="translate" values="690 146;690 136;690 146" dur="6s" repeatCount="indefinite"/>
+          <circle r="22" fill="#0b141a" stroke="#25d366" stroke-opacity="0.6" stroke-width="1.5"/>
+          <text y="7">📥</text>
+        </g>
+        <g transform="translate(1156 140)">
+          <animateTransform attributeName="transform" type="translate" values="1156 140;1156 150;1156 140" dur="6.5s" repeatCount="indefinite"/>
+          <circle r="22" fill="#0b141a" stroke="#22d3ee" stroke-opacity="0.6" stroke-width="1.5"/>
+          <text y="7">🎮</text>
+        </g>
+        <g transform="translate(1158 250)">
+          <animateTransform attributeName="transform" type="translate" values="1158 250;1158 240;1158 250" dur="5.5s" repeatCount="indefinite"/>
+          <circle r="22" fill="#0b141a" stroke="#a3e635" stroke-opacity="0.6" stroke-width="1.5"/>
+          <text y="7">🤖</text>
+        </g>
+        <g transform="translate(690 300)">
+          <animateTransform attributeName="transform" type="translate" values="690 300;690 310;690 300" dur="7s" repeatCount="indefinite"/>
+          <circle r="22" fill="#0b141a" stroke="#38bdf8" stroke-opacity="0.6" stroke-width="1.5"/>
+          <text y="7">🛡️</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ============ HUD ============ -->
+    <g stroke="#25d366" stroke-opacity="0.7" stroke-width="2" fill="none" stroke-linecap="round">
+      <path d="M26 56 V26 H56"/>
+      <path d="M1174 394 V424 H1144"/>
+    </g>
+    <g font-family="Consolas,'SF Mono','Courier New',monospace" font-size="11" fill="#4ade80" letter-spacing="2">
+      <text x="1136" y="428" text-anchor="end">MULTI-DEVICE · ESM · MIT</text>
+    </g>
+
+    <!-- bottom light -->
+    <rect x="-300" y="446" width="300" height="4" fill="url(#sweep)" opacity="0.7">
+      <animate attributeName="x" values="-300;1200" dur="5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- border -->
+    <rect x="1" y="1" width="1198" height="448" rx="23" fill="none" stroke="#25d366" stroke-opacity="0.4" stroke-width="2"/>
+  </g>
+</svg>

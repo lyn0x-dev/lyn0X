@@ -339,7 +339,7 @@ LynoX/
 
 [![WhatsApp Channel](https://img.shields.io/badge/تابع%20القناة-25d366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/@WND0)
 
-⭐ لو المشروع عجبك، سيب نجمة على الريبو
+⭐ لو المشروع عجبك، سيب نجمة على الريبو و البوت تعديل من بومني
 
 </div>
 
